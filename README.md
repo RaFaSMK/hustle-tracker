@@ -1,42 +1,42 @@
 # Hustle Tracker
 
-Stock management app for physical and digital products.
+Aplicativo de controle de estoque para produtos físicos e digitais.
 
-This project was built with Expo React Native (TypeScript) and accepted for this assignment by the instructor as equivalent for implementation requirements.
+Este projeto foi desenvolvido com Expo React Native (TypeScript) e aceito pelo professor como equivalente aos requisitos de implementação do trabalho.
 
-## Assignment Scope
+## Escopo do Trabalho
 
-- Consume and display data from an external API
-- Integrate with Firebase
-- Deliver a complete repository with README, architecture, screenshots, and a public test link
+- Consumir e exibir dados de uma API externa
+- Integrar com Firebase
+- Entregar repositório completo com README, arquitetura, prints e link público para teste
 
-## Features
+## Funcionalidades
 
-- Dashboard with stock value, estimated profit, and current USD-BRL quote
-- Add item flow (physical or digital)
-- Realtime list and actions (mark sold/reopen, delete)
-- Reports with period filters and charts
-- Full item list view with financial details
+- Dashboard com valor em estoque, lucro estimado e cotação atual USD-BRL
+- Fluxo de cadastro de item (físico ou digital)
+- Lista em tempo real com ações (marcar como vendido/reabrir, excluir)
+- Relatórios com filtros por período e gráficos
+- Tela completa de itens com detalhes financeiros
 
-## Technologies
+## Tecnologias
 
 - Expo + React Native
 - TypeScript
 - Expo Router
-- NativeWind (Tailwind-style classes)
+- NativeWind (classes no estilo Tailwind)
 - Firebase Firestore
 - AwesomeAPI (USD-BRL)
 - react-native-gifted-charts
 
-## Project Structure
+## Estrutura do Projeto
 
 ```text
 app/
    (tabs)/
       index.tsx      # Dashboard
-      add.tsx        # Add item form
-      reports.tsx    # Reports and charts
-   items.tsx        # Full items list
+      add.tsx        # Formulário de cadastro
+      reports.tsx    # Relatórios e gráficos
+   items.tsx        # Lista completa de itens
 components/
 hooks/
 services/
@@ -44,23 +44,23 @@ types/
 docs/
 ```
 
-## Setup
+## Configuração
 
-### Prerequisites
+### Pré-requisitos
 
 - Node.js 18+
 - npm
-- Expo CLI tools (via `npx expo ...`)
+- Ferramentas Expo CLI (via `npx expo ...`)
 
-### 1. Install dependencies
+### 1. Instalar dependências
 
 ```bash
 npm install
 ```
 
-### 2. Configure environment variables
+### 2. Configurar variáveis de ambiente
 
-Copy values from `.env.example` into a local `.env` file:
+Copie os valores de `.env.example` para um arquivo local `.env`:
 
 ```env
 EXPO_PUBLIC_FIREBASE_API_KEY=...
@@ -72,13 +72,13 @@ EXPO_PUBLIC_FIREBASE_APP_ID=...
 EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID=...
 ```
 
-### 3. Run the app
+### 3. Executar o app
 
 ```bash
 npm run start
 ```
 
-Or directly by platform:
+Ou diretamente por plataforma:
 
 ```bash
 npm run web
@@ -92,66 +92,61 @@ npm run ios
 npm run lint
 ```
 
-## API Integration Evidence
+## Evidências de Integração com API
 
-- External API call: `services/api.ts`
-- Hook consumption: `hooks/use-usd-rate.ts`
-- UI usage: `app/(tabs)/index.tsx` (quote card + USD conversion effects)
+- Chamada da API externa: `services/api.ts`
+- Consumo via hook: `hooks/use-usd-rate.ts`
+- Uso na interface: `app/(tabs)/index.tsx` (card de cotação + conversão em USD)
 
-## Firebase Integration Evidence
+## Evidências de Integração com Firebase
 
-- Firebase init: `services/firebase.ts`
-- Firestore CRUD and realtime: `services/firestore.ts`
-- Realtime hook: `hooks/use-products.ts`
-- UI write/read flows: `app/(tabs)/add.tsx`, `app/(tabs)/index.tsx`, `app/(tabs)/reports.tsx`
+- Inicialização do Firebase: `services/firebase.ts`
+- CRUD e tempo real no Firestore: `services/firestore.ts`
+- Hook com atualização em tempo real: `hooks/use-products.ts`
+- Fluxos de escrita/leitura na interface: `app/(tabs)/add.tsx`, `app/(tabs)/index.tsx`, `app/(tabs)/reports.tsx`
 
-## Architecture
+## Arquitetura
 
-- Detailed architecture document: `docs/architecture.md`
+- Documento detalhado da arquitetura: `docs/architecture.md`
 
-## Screenshots
+## Prints da Aplicação
 
-Add real screenshots in `docs/screenshots/` using the expected names from `docs/screenshots/README.md`:
+Os prints da aplicação já estão incluídos em `docs/screenshots/` com os seguintes nomes:
 
 - `home.png`
 - `add-item.png`
 - `reports.png`
 - `items-list.png`
 
-After adding files, include them below:
+Pré-visualização:
 
 ![Home](docs/screenshots/home.png)
 ![Add Item](docs/screenshots/add-item.png)
 ![Reports](docs/screenshots/reports.png)
 ![Items List](docs/screenshots/items-list.png)
 
-## Public Test Link
+## Link Público para Teste
 
 - Web: https://spiffy-baklava-696e0b.netlify.app/
-- APK (optional): Not provided
 
-## Publish Web (recommended)
+## Publicar Versão Web (recomendado)
 
-Generate web build:
+Gerar build web:
 
 ```bash
 npx expo export --platform web
 ```
 
-Then deploy the output using a static host (for example: Vercel, Netlify, Firebase Hosting).
+Depois, publique a saída em um host estático (por exemplo: Vercel, Netlify, Firebase Hosting).
 
-## Rubric Mapping
+## Mapeamento da Rubrica
 
-| Rubric Item                            | Status | Evidence                                        |
-| -------------------------------------- | ------ | ----------------------------------------------- |
-| App showing API data (2 pts)           | Done   | `services/api.ts`, quote on dashboard           |
-| Firebase integration (2 pts)           | Done   | `services/firebase.ts`, `services/firestore.ts` |
-| Well-written README (2 pts)            | Done   | This README                                     |
-| Source code correctly versioned (1 pt) | Done   | Git repository                                  |
-| Architecture drawing (1 pt)            | Done   | `docs/architecture.md`                          |
-| App screenshots (1 pt)                 | Done   | `docs/screenshots/*.png`                        |
-| Link to APK or web test (1 pt)         | Done   | https://spiffy-baklava-696e0b.netlify.app/      |
-
-## Final Checklist
-
-See `docs/submission-checklist.md`.
+| Item da Rubrica                                       | Status | Evidência                                       |
+| ----------------------------------------------------- | ------ | ----------------------------------------------- |
+| Aplicação exibindo dados de API (2 pts)               | Feito  | `services/api.ts`, cotação no dashboard         |
+| Integração com Firebase (2 pts)                       | Feito  | `services/firebase.ts`, `services/firestore.ts` |
+| README bem feito com instruções e tecnologias (2 pts) | Feito  | Este README                                     |
+| Código-fonte corretamente versionado (1 pt)           | Feito  | Repositório Git                                 |
+| Desenho da arquitetura da aplicação (1 pt)            | Feito  | `docs/architecture.md`                          |
+| Prints da aplicação (1 pt)                            | Feito  | `docs/screenshots/*.png`                        |
+| Link para testar versão web ou baixar APK (1 pt)      | Feito  | https://spiffy-baklava-696e0b.netlify.app/      |
