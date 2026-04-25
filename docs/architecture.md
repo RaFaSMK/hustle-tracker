@@ -1,41 +1,45 @@
-# Architecture
+# Arquitetura
 
-This file documents the architecture required by the assignment.
+Este arquivo documenta a arquitetura exigida no trabalho.
 
-## High-level flow
+## Fluxo de alto nível
 
 ```mermaid
 flowchart LR
-  UI[Expo React Native UI\napp/(tabs)] --> Hooks[Hooks Layer\nuse-products / use-usd-rate]
-  Hooks --> Services[Service Layer\napi.ts / firestore.ts / firebase.ts]
-  Services --> API[AwesomeAPI\nUSD-BRL quote]
-  Services --> DB[Firebase Firestore\ncollection: estoque]
+  UI["Interface Expo React Native<br/>app/(tabs)"] --> Hooks["Camada de Hooks<br/>use-products / use-usd-rate"]
+  Hooks --> Services["Camada de Serviços<br/>api.ts / firestore.ts / firebase.ts"]
+  Services --> API["AwesomeAPI<br/>cotação USD-BRL"]
+  Services --> DB["Firebase Firestore<br/>coleção: estoque"]
   DB --> Services
   API --> Services
   Services --> Hooks
   Hooks --> UI
 ```
 
-## Layers
+## Camadas
 
-1. UI Layer
-- Screens and components under `app/` and `components/`.
-- Displays stock metrics, report charts, add form, and item list.
+1. Camada de Interface (UI)
 
-2. Hook Layer
-- `hooks/use-products.ts`: subscribes to Firestore realtime data.
-- `hooks/use-usd-rate.ts`: loads exchange rate from AwesomeAPI.
+- Telas e componentes em `app/` e `components/`.
+- Exibe métricas de estoque, gráficos de relatórios, formulário de cadastro e lista de itens.
 
-3. Service Layer
-- `services/firestore.ts`: CRUD + normalization for products.
-- `services/firebase.ts`: Firebase app and Firestore initialization.
-- `services/api.ts`: HTTP call to AwesomeAPI.
+2. Camada de Hooks
 
-4. Data Sources
-- Firestore for persisted stock items.
-- AwesomeAPI for external exchange-rate data.
+- `hooks/use-products.ts`: assina dados em tempo real do Firestore.
+- `hooks/use-usd-rate.ts`: carrega a cotação da AwesomeAPI.
 
-## Data ownership
+3. Camada de Serviços
 
-- Source of truth for products: Firestore (`estoque`).
-- Source of truth for FX rate: AwesomeAPI (with local fallback in hook).
+- `services/firestore.ts`: CRUD e normalização de produtos.
+- `services/firebase.ts`: inicialização do Firebase e Firestore.
+- `services/api.ts`: chamada HTTP para AwesomeAPI.
+
+4. Fontes de Dados
+
+- Firestore para persistência dos itens de estoque.
+- AwesomeAPI para dados externos de cotação.
+
+## Propriedade dos dados
+
+- Fonte de verdade dos produtos: Firestore (`estoque`).
+- Fonte de verdade da cotação: AwesomeAPI (com fallback local no hook).

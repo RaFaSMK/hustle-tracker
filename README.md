@@ -33,7 +33,7 @@ Este projeto foi desenvolvido com Expo React Native (TypeScript) e aceito pelo p
 ```text
 app/
    (tabs)/
-      index.tsx      # Dashboard
+      index.tsx      # Painel
       add.tsx        # Formulário de cadastro
       reports.tsx    # Relatórios e gráficos
    items.tsx        # Lista completa de itens
@@ -120,14 +120,14 @@ Os prints da aplicação já estão incluídos em `docs/screenshots/` com os seg
 
 Pré-visualização:
 
-![Home](docs/screenshots/home.png)
-![Add Item](docs/screenshots/add-item.png)
-![Reports](docs/screenshots/reports.png)
-![Items List](docs/screenshots/items-list.png)
+![Tela inicial](docs/screenshots/home.png)
+![Cadastro de item](docs/screenshots/add-item.png)
+![Relatórios](docs/screenshots/reports.png)
+![Lista de itens](docs/screenshots/items-list.png)
 
 ## Link Público para Teste
 
-- Web: https://spiffy-baklava-696e0b.netlify.app/
+- Versão web: https://spiffy-baklava-696e0b.netlify.app/
 
 ## Publicar Versão Web (recomendado)
 
